@@ -1,0 +1,291 @@
+<head>
+    <style>
+   
+
+.box {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+
+
+
+
+
+.box2 {
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.box2 select {
+  background-color: #0563af;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box2::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box2:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box2 select option {
+  padding: 30px;
+}
+
+
+
+
+
+
+
+button, button::after {
+  width: 380px;
+  height: 86px;
+  font-size: 36px;
+  font-family: 'Bebas Neue', cursive;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 88px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+}
+
+button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'AVAILABLE NOW';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+
+
+
+.winnerImg{
+  width: 25%;
+}
+button{
+  width: 20%;
+}
+
+    </style>
+
+    
+</head>
+
+
+<% if @bagmon1 && @bagmon2 %>
+    <div class="container-winner">
+    <div class="title"> 
+        <div class="titleText">
+             
+        </div>
+            <h1 class="venc" style='margin-top: 20px; color: #0d6efd '>Campeão</h1>
+            <img class='winnerImg' src=<%= @winnerImg %> />
+            <div class='containerWinner'>
+            <h2 class='titleWinnerName' style='color: #fff;'><%= @winnerName %></h2>
+            </div>
+        </div>
+    </div>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+            <% @rounds.each do |round| %>
+            <p style='margin: 5px'><%= round %></p>
+        <% end %>
+  </div>
+
+</div>
+
+<script>
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+  document.querySelector("body").style.overflow = 'hidden';
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+  document.querySelector("body").style.overflow = 'auto';
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+
+
+
+<% else %>
+
+  <div class="title"> 
+<div class="container-global">
+    <form action="/battle">
+        <div class="select">
+            <div class="box">
+                <label for="bagmon1" style='font-weight: bold; margin-right: 10px'>Bagmon 01</label>
+                <select id="bagmon1" required  name="bagmon1">
+                    <option selected disabled>Selecione...</option>
+                    <% @bagmons.each do |bagmon| %>
+                        <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
+                    <% end %>
+                </select>
+            </div> 
+
+            <div class="box2">
+                <label for="bagmon2" style='font-weight: bold; margin-right: 10px'>Bagmon 02</label>
+                <select id="bagmon2" required name="bagmon2">
+                    <option selected disabled>Selecione...</option>
+                    <% @bagmons.each do |bagmon| %>
+                        <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
+                    <% end %>
+                </select>
+            </div>
+        </div>
+        <button>Batalhar</button>
+    </form>
+    </div class="container-global">
+<% end %>

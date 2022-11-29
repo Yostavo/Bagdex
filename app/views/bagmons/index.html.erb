@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag "login.css", "util.css" %>
+<head>
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display:grid;
+}
+img {
+  width: 30%;
+  height: 100%;
+  object-fit:cover;
+  
+  -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
+  
+  transform-origin:center;
+  transform:perspective(800px) rotateY(25deg);
+  transition:0.5s;
+}
+.container {
+  max-width:600px;
+  max-height:350px;
+  
+  
+  
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  
+}
+.container:hover img {
+  opacity:0.3;
+}
+.container img:hover {
+  transform:perspective(800px)       rotateY(0deg);
+  opacity:1;
+}
+h2{
+  color:#000000!important;
+}
+
+p{
+  color:#000000!important;
+}
+
+  </style>
+<head>
+
+<body> 
+  <div class="title"> 
+  </div>
+  <div class="main">
+    <% @bagmons.each do |bagmon| %>
+      <a style='background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
+        <div class="container">
+          <div class="bagmon">
+            <%= image_tag bagmon.image, size: "250x250" %>
+          </div>
+          <h2><%= bagmon.name %></h2>
+          <p><%= bagmon.type.name %></p>
+        </div>
+      </a>
+    <% end %>
+  </div>
+
+  <div class="container-login100-form-btn m-t-32">
+                 <button class="login100-form-btn">
+                 <%= link_to 'Adicionar um Bagmon', new_bagmon_path %>
+                 </button>
+             </div>
+</body>

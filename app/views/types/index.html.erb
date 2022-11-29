@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag "login.css", "util.css" %>
+<head>
+  <style>
+  *
+  h1{
+    text-align: center;
+  }
+
+  table, th, td{
+    border: 1px solid black;
+  }
+
+  table{
+    border-collapse: collapse;
+    margin: auto;
+  }
+
+  th, td{
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+  }
+
+  th{
+    font-weight: bold;
+  }
+
+  tr:nth-child(even){
+    background-color: #DCEBE6;
+  }
+
+  tr:hover:nth-child(1n + 2){
+    background-color: #085f63;
+    color: #fff;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="main-info">
+    <h1>TIPOS</h1>
+      <table>
+      <% @types.each do |type| %> 
+        <tr>
+          <td><%= type.name %></td>
+        </tr>
+      <% end %>
+      </table>
+
+      <div class="container-login100-form-btn m-t-32">
+      <button class="login100-form-btn">
+      <%= link_to 'Novo Tipo', new_type_path %>
+      </button>
+  </div>
+          
+        </div>
+    </div>
+  </div>
+</body>

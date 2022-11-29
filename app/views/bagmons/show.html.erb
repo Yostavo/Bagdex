@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag "login.css", "util.css" %>
+<head>
+  <style>
+  * 
+
+  h2{
+    margin: 0.8em 0;
+	  color:#000000;
+	  font-size:1.4em;
+    font-size:1.2em;
+  }
+
+  </style>
+</head>
+
+<body>
+  <div class="mainImage">
+  <h1>BAGMON</H1>
+    <h2>
+      <%= @bagmon.name %>
+    </h2>
+    
+    <h2>
+      <strong>ID:</strong>
+      <%= @bagmon.number %>
+    </h2>
+    
+    <p style="margin-top: 5px;">
+      <strong>Tipo:</strong>
+      <%= @bagmon.type.name %>
+    </p>
+
+
+  <div class="container-login100-form-btn m-t-32">
+                 <button class="login100-form-btn">
+                 <%= link_to 'Editar', edit_bagmon_path(@bagmon) %>
+                 </button>
+             </div>
+
+  </div>
+</body>
+
+

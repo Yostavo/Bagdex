@@ -1,0 +1,67 @@
+<%= stylesheet_link_tag "login.css", "util.css" %>
+<head>
+
+</head>
+
+<%= form_with(model: bagmon, local: true) do |formEdit| %>
+<body>
+    <div class="container-form">
+        <div class="content-box">
+            <div class="form-box">
+                <h2>Editar</h2>
+                <form>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" <%= formEdit.number_field :number, class: "form-control", placeholder: "ID do Bagmon" %>
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>    
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" <%= formEdit.text_field :name, class: "form-control", placeholder: "Nome do Bagmon" %>
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>    
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" <%= formEdit.text_field :image, class: "form-control", placeholder: "URL do Bagmon" %>
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>    
+                    </div>
+
+                    <div class="input-box">
+                        <span>Tipo do Bagmon</span>
+                         <%= formEdit.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false, class: "form-control"}) %>
+                    </div>
+
+                
+                    <div class="container-login100-form-btn m-t-32">
+                    <button class="login100-form-btn">
+                    <%= formEdit.submit "Editar" %>
+                    </button>
+                    </div>
+
+                     <div class="input-box">
+                        <div class="btn">
+                            <button> <%= link_to 'Voltar', bagmons_path %> </button>
+                            <button class='btn-delete'> <%= link_to 'Excluir', bagmon, method: :delete, data: { confirm: 'Confirma a exclusão do Bagmon?' } %> </button>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                      <% if bagmon.errors.any? %>
+                        <div id="error_explanation">
+                       <ul>
+                          <span style="color: red">Ops! Problema ao salvar:</span>
+                            <% bagmon.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                       <% end %>
+                     </ul>
+                    </div>
+                    <% end %>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<% end %>

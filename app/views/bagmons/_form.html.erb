@@ -1,0 +1,52 @@
+<%= stylesheet_link_tag "login.css", "util.css" %>
+
+<head>
+
+</head>
+<%= form_with(model: bagmon, local: true) do |form| %>
+<body>
+
+
+  <div class="container-form">
+      <div class="content-box">
+          <div class="form-box">
+
+          </div>
+              <form>
+                  <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" <%= form.number_field :number, class: "form-control", placeholder: "ID do Bagmon" %>
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>    
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" <%= form.text_field :name, class: "form-control", placeholder: "Nome do Bagmon" %>
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>    
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100" <%= form.text_field :image, class: "form-control", placeholder: "URL do Bagmon" %>
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>    
+                    </div>
+
+                  <div class="input-box">
+                      <span>Tipo</span>
+                       <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false, class: "form-control"}) %>
+                  </div>
+
+
+                  <div class="container-login100-form-btn m-t-32">
+                 <button class="login100-form-btn">
+                 <%= form.submit "Cadastrar" %>
+                 </button>
+             </div>
+
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  
+</body>
+</html>
+<% end %>
