@@ -55,12 +55,6 @@ Inicie o servidor
   rails s -b 0.0.0.0
 ```
 
-    
-## Autores
-
-- [@cleitoncsalvagni](https://www.github.com/cleitoncsalvagni)
-
-
 ## Referência
 
  - [Bagdex](https://bagdex.com.br/)
